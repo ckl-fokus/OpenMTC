@@ -1,9 +1,10 @@
 services:
-- docker
+  - docker
+before_script:
+  - ./create-binary-docker backend
 script:
-- sh "create-binary-docker backend"
-- docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-- docker push cklopp/backend-amd64
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+  - docker push cklopp/backend-amd64
 env:
   matrix:
     secure: kGDw9Di8HBhe/kQjX0JIuo6a7F9c+0yU7esjRaUpSIhRESTXkio6wLxSO3mLM96uvoUKcRcRnRLTAfpwoJMZYGsXB0yNREUHBqF1DuaSQnOw85uiMtc94mY6rsso+AQ2zHByWdESnyg5C59rb1fX5C16pX3WIVeOPhuXUhRGMFHdpx128uTfUYC2U00ahZpQ0rOdDr3efzm2CUogh9/mgs4VxuBMZXd1OkLrOBAJd+beLwMyqoarWuUx27EOaEf1Fzo7vob6CSGt2IF79+89aTvBTLF/7AiwXT8NeSEkjG4F8i9UZtkOu9qdLQTcu6qOGl9a/y7k4FujF5hq7qVhtWfOQaSJrPsnD+jN79plTNTrg4wmPW0rMNBORbfRWV2O6wIHNuAVSd61mTPAt0p3vY7jALquV4++bMrbMsQFiYqDzQTHg9xKNsINBjtHofkyH0II0OgvvgcOe/99tQfj5Tf3nQo8Nuvgb7B6th8OpYlq6W4dE94HqQ1Fjs9Z1LQNyB5vO1CPixbuC1KnDqe5n+NABstb8sqHennbpL7PMM3OtGlCtEbk9ZpIKvhF8a+myc1nmQNzHV+8dbhTlnV7dGnvBZjzMA+ROoAFpJL9l4pIWMXvg26HoTCTX+AD2acpQ9mNJxYeg3mAhmwiKW4N/AyAoHAU1nO4vGaqlDI10MU=
