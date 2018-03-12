@@ -3,6 +3,7 @@ services:
 before_script:
   - ./create-binary-docker backend
 script:
+  - docker tag openmtc/backend-amd64 cklopp/openmtc-backend
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
   - docker push cklopp/backend-amd64
 env:
