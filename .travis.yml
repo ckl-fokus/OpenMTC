@@ -11,7 +11,7 @@ before_script:
   - ./create-binary-docker influxdb 
   - ./create-binary-docker influxdb -a arm
   - ./create-binary-docker cul868ipe 
-  - ./create-binary-docker curl868ipe -a arm
+  - ./create-binary-docker cul868ipe -a arm
 script:
   - docker tag openmtc/orioncontextbroker-amd64 openmtc/orion-context-broker-app-amd64
   - docker tag openmtc/orioncontextbroker-arm openmtc/orion-context-broker-app-arm
