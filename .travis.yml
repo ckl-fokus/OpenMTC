@@ -3,6 +3,7 @@ services:
 before_script:
 - sudo apt-get update 
 - sudo apt install qemu-user-static
+- sudo pip install -U pip setuptools
 - "./create-binary-docker backend"
 - "./create-binary-docker backend -a arm"
 - "./create-binary-docker gateway"
