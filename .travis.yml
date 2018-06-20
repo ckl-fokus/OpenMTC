@@ -2,7 +2,7 @@ services:
 - docker
 before_script:
 - sudo apt update 
-- sudo apt dist-upgrade 
+- sudo apt upgrade 
 - sudo apt install qemu-user-static
 - "./create-binary-docker backend"
 - "./create-binary-docker backend -a arm"
